@@ -657,4 +657,41 @@ require("lazy").setup({
 			indent = { enable = true, disable = { "ruby" } },
 		},
 	},
+	{ -- Tree navigator with icons
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x", -- Use v3 branch for latest stable features
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons", -- for file icons (optional, but recommended)
+			"MunifTanjim/nui.nvim",
+		},
+		config = function()
+			require("neo-tree").setup({
+				window = {
+					position = "right", -- 👈 puts the tree on the right
+					width = 30,
+				},
+				filesystem = {
+					filtered_items = {
+						visible = true, -- show dotfiles by default
+						hide_dotfiles = false,
+						hide_gitignored = true,
+					},
+				},
+			})
+		end,
+		git_status = {
+			symbols = {
+				added = "+",
+				modified = "m",
+				deleted = "d",
+				renamed = "r",
+				untracked = "u",
+				ignored = "i",
+				unstaged = "!",
+				staged = "s",
+				conflict = "X",
+			},
+		},
+	},
 })
