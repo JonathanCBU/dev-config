@@ -1,0 +1,5 @@
+alias zedit="nvim ~/.zshrc ; source ~/.zshrc"
+alias vedit="nvim ~/.config/nvim"
+alias conf="nvim ~/.dev-config"
+alias ls="ls -h --color"
+alias ll="ls --color -la"
