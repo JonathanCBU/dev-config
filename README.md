@@ -1,5 +1,9 @@
 # dev-config
 
+```bash
+git clone git@github.com:JonathanCBU/dev-config.git ~/.dev-config
+```
+
 ## ZSH
 
 1. Install iTerm
