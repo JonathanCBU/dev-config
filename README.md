@@ -15,6 +15,13 @@ git clone git@github.com:JonathanCBU/dev-config.git ~/.dev-config
 ln -sf ~/.dev-config/zshrc ~/.zshrc
 ```
 
+## VIM
+
+1. Create rc symlink
+```bash
+ln -sf ~/.dev-config/vim/vimrc ~/.vimrc
+```
+
 ## NVIM
 
 1. Install nvim

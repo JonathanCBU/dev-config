@@ -1,0 +1,39 @@
+" Set spacebar as leader key
+let mapleader=" "
+
+" Clear highlights on search when pressing <Esc> in normal mode
+nnoremap <Esc> :nohlsearch<CR>
+
+" File saving and quitting
+nnoremap <leader>q :q!<CR>
+nnoremap <leader>w :w<CR>
+nnoremap <leader>z :wq<CR>
+
+" Split navigation with CTRL+<hjkl>
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+
+" Go back to file explorer (Ex command)
+nnoremap <leader>pve :Ex<CR>
+
+" Yanking and pasting reconfig
+nnoremap Y yiw
+nnoremap y Y
+nnoremap <leader>p "_diw"0P
+nnoremap <leader>x *``cgn
+
+" Quick Movement
+nnoremap <leader>j 10j
+vnoremap <leader>j 10j
+nnoremap <leader>k 10k
+vnoremap <leader>k 10k
+
+" Buffer Navigation
+nnoremap <leader>bn :bnext<CR>
+nnoremap <leader>bp :bprevious<CR>
+nnoremap <leader>bd :bdelete<CR>
+
+" Config Access
+nnoremap <leader>ev :e $MYVIMRC<CR>
