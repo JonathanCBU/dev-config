@@ -41,3 +41,9 @@ ln -sf ~/.dev-config/nvim/init.lua ~/.config/nvim/init.lua
 ln -sf ~/.dev-config/nvim/lua ~/.config/nvim/lua
 ```
 
+## IdeaVIM (JetBrains)
+```bash
+ln -s ~/.vimrc ~/.ideavimrc
+```
+
+
