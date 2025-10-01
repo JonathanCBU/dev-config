@@ -38,3 +38,6 @@ vim.keymap.set("n", "<leader>ev", ":e $MYVIMRC<CR>", { desc = "Edit vim config" 
 vim.keymap.set("n", "<leader>pv", ":Neotree toggle<CR>", { desc = "Toggle File [E]xplorer" })
 vim.keymap.set("n", "<leader>pf", ":Neotree focus<CR>", { desc = "Toggle File [E]xplorer" })
 vim.keymap.set("n", "<leader>pg", ":Neotree git_status toggle<CR>", { desc = "Toggle File [E]xplorer" })
+
+-- Bulk edit macros
+vim.keymap.set("n", "<leader>dd", [[:s/\s\+//g<CR>]], { desc = "Remove all whitespace from current line" })

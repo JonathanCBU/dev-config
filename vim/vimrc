@@ -1,3 +1,6 @@
+" NOTE: This is generated mostly by passing my mappings.lua to ChatGPT and
+" asking for it to convert to a vimrc without plugins
+
 " Set spacebar as leader key
 let mapleader=" "
 
@@ -37,3 +40,7 @@ nnoremap <leader>bd :bdelete<CR>
 
 " Config Access
 nnoremap <leader>ev :e $MYVIMRC<CR>
+
+" Remove all whitespace from current line
+nnoremap <leader>dd :s/\s\+//g<CR>
+
