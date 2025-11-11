@@ -41,3 +41,8 @@ vim.keymap.set("n", "<leader>pg", ":Neotree git_status toggle<CR>", { desc = "To
 
 -- Bulk edit macros
 vim.keymap.set("n", "<leader>dd", [[:s/\s\+//g<CR>]], { desc = "Remove all whitespace from current line" })
+
+-- Terminal
+vim.keymap.set("n", "<leader>tt", ":terminal<CR>", { desc = "Launch terminal emulator in current window" })
+vim.keymap.set("n", "<leader>ttv", "<C-w><C-v> :terminal<CR>", { desc = "Launch terminal emulator in current window" })
+vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { noremap = true, desc = "Exit insert mode from terminal" })
