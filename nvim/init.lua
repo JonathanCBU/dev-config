@@ -53,3 +53,9 @@ require("lazy").setup({
 	-- Import all plugin configurations from lua/custom/plugins/
 	{ import = "custom.plugins" },
 })
+
+-- terminal customization
+vim.api.nvim_create_autocmd("TermOpen", {
+	pattern = "*",
+	command = "setlocal relativenumber number",
+})

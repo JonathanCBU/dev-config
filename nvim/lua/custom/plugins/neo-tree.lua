@@ -11,7 +11,7 @@ return {
 		require("neo-tree").setup({
 			window = {
 				position = "right",
-				width = 30,
+				width = 40,
 			},
 			filesystem = {
 				filtered_items = {
@@ -31,6 +31,14 @@ return {
 					unstaged = "!",
 					staged = "s",
 					conflict = "X",
+				},
+			},
+			event_handlers = {
+				{
+					event = "neo_tree_buffer_enter",
+					handler = function(arg)
+						vim.cmd([[ setlocal relativenumber ]])
+					end,
 				},
 			},
 		})
