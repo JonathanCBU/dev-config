@@ -16,6 +16,8 @@ return {
 			"query",
 			"vim",
 			"vimdoc",
+			"go",
+			"c_sharp",
 		},
 		auto_install = true,
 		highlight = {
@@ -25,4 +27,3 @@ return {
 		indent = { enable = true, disable = { "ruby" } },
 	},
 }
-

@@ -93,13 +93,43 @@ return {
 						},
 					},
 				},
+				gopls = {
+					settings = {
+						gopls = {
+							analyses = {
+								unusedparams = true,
+							},
+							staticcheck = true,
+							gofumpt = true,
+						},
+					},
+				},
+				omnisharp = {
+					cmd = { "omnisharp" },
+					settings = {
+						FormattingOptions = {
+							EnableEditorConfigSupport = true,
+							OrganizeImports = true,
+						},
+						RoslynExtensionsOptions = {
+							EnableAnalyzersSupport = true,
+							EnableImportCompletion = true,
+						},
+					},
+				},
 			}
 
 			require("mason").setup()
 
 			local ensure_installed = vim.tbl_keys(servers or {})
 			vim.list_extend(ensure_installed, {
-				"stylua",
+				"stylua", -- Lua formatter
+				-- Go tools
+				"gofumpt", -- Go formatter (stricter than gofmt)
+				"goimports", -- Go imports organizer
+				"golangci-lint", -- Go linter aggregator
+				-- C# tools
+				"csharpier", -- C# formatter
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
@@ -115,4 +145,3 @@ return {
 		end,
 	},
 }
-
