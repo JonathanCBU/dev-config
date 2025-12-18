@@ -33,6 +33,9 @@ return {
 			go = { "goimports", "gofumpt" },
 			cs = { "csharpier" },
 			markdown = { "prettier" },
+			sh = { "shfmt" },
+			zsh = { "shfmt" },
+			bash = { "shfmt" },
 		},
 	},
 }

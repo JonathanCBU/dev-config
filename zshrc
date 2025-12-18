@@ -23,19 +23,10 @@ if [ -f ~/.dev-config/local/funcs.sh ]; then
 fi
 
 # Work aliases and funcs that aren't meant to go into my public repo
-if [ -f ~/.dev-config/local/work_aliases.sh ]; then
-  . ~/.dev-config/local/work_aliases.sh
-fi
-
-if [ -f ~/.dev-config/local/work_exports.sh ]; then
-  . ~/.dev-config/local/work_exports.sh
-fi
-
-if [ -f ~/.dev-config/local/work_funcs.sh ]; then
-  . ~/.dev-config/local/work_funcs.sh
+if [ -f ~/.dev-config/local/work_zshrc.sh ]; then
+  . ~/.dev-config/local/work_zshrc.sh
 fi
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
