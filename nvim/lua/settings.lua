@@ -44,7 +44,7 @@ vim.opt.splitbelow = true
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 vim.opt.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+vim.opt.listchars = { tab = "> ", trail = "·", nbsp = "␣", multispace = "·" }
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = "split"
@@ -55,12 +55,5 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
--- Line at 88 chars
+-- Line at 80 chars
 vim.opt.colorcolumn = "79"
-
--- Custom characters representations
-local tab_char = ">>"
-
-vim.opt.listchars = {
-	tab = tab_char,
-}

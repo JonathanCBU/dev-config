@@ -44,8 +44,18 @@ vim.keymap.set("n", "<leader>dd", [[:s/\s\+//g<CR>]], { desc = "Remove all white
 
 -- Terminal
 vim.keymap.set("n", "<leader>tt", ":terminal<CR>", { desc = "Open terminal in current window" })
-vim.keymap.set("n", "<leader>th", ":belowright split | terminal<CR>", { desc = "Open terminal in horizontal split below" })
-vim.keymap.set("n", "<leader>tv", ":belowright vsplit | terminal<CR>", { desc = "Open terminal in vertical split right" })
+vim.keymap.set(
+	"n",
+	"<leader>ts",
+	":belowright split | terminal<CR>",
+	{ desc = "Open terminal in horizontal split below" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>tv",
+	":belowright vsplit | terminal<CR>",
+	{ desc = "Open terminal in vertical split right" }
+)
 
 -- Terminal mode navigation - use Ctrl+hjkl to navigate between splits from terminal
 vim.keymap.set("t", "<C-h>", [[<C-\><C-n><C-w>h]], { desc = "Move to left window from terminal" })
