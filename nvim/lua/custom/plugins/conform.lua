@@ -32,6 +32,7 @@ return {
 			lua = { "stylua" },
 			go = { "goimports", "gofumpt" },
 			cs = { "csharpier" },
+			markdown = { "prettier" },
 		},
 	},
 }
