@@ -32,7 +32,14 @@ return {
 			lua = { "stylua" },
 			go = { "goimports", "gofumpt" },
 			cs = { "csharpier" },
-			markdown = { "prettier" },
+
+			markdown = { "prettierd", "prettier" },
+
+			-- javascript = { "prettierd", "prettier" },
+			-- javascriptreact = { "prettierd", "prettier" },
+			-- typescript = { "prettierd", "prettier" },
+			-- typescriptreact = { "prettierd", "prettier" },
+
 			sh = { "shfmt" },
 			zsh = { "shfmt" },
 			bash = { "shfmt" },

@@ -117,19 +117,44 @@ return {
 						},
 					},
 				},
+				-- TypeScript / JavaScript
+				vtsls = {
+					-- (optional) filetypes are usually automatic; add if you want to be explicit:
+					-- filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+
+					settings = {
+						typescript = {
+							-- optional quality-of-life defaults; tweak as you like
+							preferences = {
+								importModuleSpecifier = "non-relative",
+							},
+						},
+						javascript = {
+							preferences = {
+								importModuleSpecifier = "non-relative",
+							},
+						},
+					},
+				},
 			}
 
 			require("mason").setup()
 
 			local ensure_installed = vim.tbl_keys(servers or {})
 			vim.list_extend(ensure_installed, {
-				"stylua", -- Lua formatter
+				"stylua",
+
 				-- Go tools
-				"gofumpt", -- Go formatter (stricter than gofmt)
-				"goimports", -- Go imports organizer
-				"golangci-lint", -- Go linter aggregator
+				"gofumpt",
+				"goimports",
+				"golangci-lint",
+
 				-- C# tools
-				"csharpier", -- C# formatter
+				"csharpier",
+
+				-- TS/JS
+				"vtsls",
+				"prettierd", -- or "prettier"
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
