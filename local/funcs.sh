@@ -21,3 +21,8 @@ update_repo() {
         return 1
     fi
 }
+
+null_push() {
+    # Usage: null_push
+    git commit --allow-empty -m "Empty Commit" && git push
+}
