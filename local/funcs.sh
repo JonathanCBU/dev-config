@@ -26,3 +26,8 @@ null_push() {
     # Usage: null_push
     git commit --allow-empty -m "Empty Commit" && git push
 }
+
+clean_branches() {
+    # Usage: clean_branches
+    git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
+}

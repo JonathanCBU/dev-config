@@ -33,6 +33,8 @@ return {
 			sh = { "shfmt" },
 			zsh = { "shfmt" },
 			bash = { "shfmt" },
+
+			sql = { "sqlfluff", "sqlfmt" },
 		},
 	},
 }
