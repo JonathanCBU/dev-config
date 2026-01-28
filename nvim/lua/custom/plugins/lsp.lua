@@ -136,9 +136,6 @@ return {
 				"goimports",
 				"golangci-lint",
 
-				-- C# tools
-				"csharpier",
-
 				-- TS/JS
 				"vtsls",
 				"prettierd", -- or "prettier"
