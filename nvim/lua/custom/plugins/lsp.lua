@@ -123,6 +123,20 @@ return {
 						},
 					},
 				},
+				-- C#
+				omnisharp = {
+					cmd = { "omnisharp" },
+					settings = {
+						FormattingOptions = {
+							EnableEditorConfigSupport = true,
+							OrganizeImports = true,
+						},
+						RoslynExtensionsOptions = {
+							EnableAnalyzersSupport = true,
+							EnableImportCompletion = true,
+						},
+					},
+				},
 			}
 
 			require("mason").setup()
@@ -139,6 +153,9 @@ return {
 				-- TS/JS
 				"vtsls",
 				"prettierd", -- or "prettier"
+
+				-- C#
+				"omnisharp"
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
