@@ -125,7 +125,6 @@ return {
 				},
 				-- C#
 				omnisharp = {
-					cmd = { "omnisharp" },
 					settings = {
 						FormattingOptions = {
 							EnableEditorConfigSupport = true,
@@ -155,7 +154,7 @@ return {
 				"prettierd", -- or "prettier"
 
 				-- C#
-				"omnisharp"
+				"omnisharp",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
