@@ -63,3 +63,24 @@ vim.keymap.set("t", "<C-j>", [[<C-\><C-n><C-w>j]], { desc = "Move to lower windo
 vim.keymap.set("t", "<C-k>", [[<C-\><C-n><C-w>k]], { desc = "Move to upper window from terminal" })
 vim.keymap.set("t", "<C-l>", [[<C-\><C-n><C-w>l]], { desc = "Move to right window from terminal" })
 vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { noremap = true, desc = "Exit insert mode from terminal" })
+
+-- Copy file name / paths to clipboard
+vim.keymap.set("n", "<leader>cf", function()
+	vim.fn.setreg("+", vim.fn.expand("%:t"))
+	print("Copied filename: " .. vim.fn.expand("%:t"))
+end, { desc = "[C]opy [F]ilename" })
+
+vim.keymap.set("n", "<leader>cr", function()
+	vim.fn.setreg("+", vim.fn.expand("%"))
+	print("Copied relative path: " .. vim.fn.expand("%"))
+end, { desc = "[C]opy [R]elative path" })
+
+vim.keymap.set("n", "<leader>cp", function()
+	vim.fn.setreg("+", vim.fn.expand("%:p"))
+	print("Copied full path: " .. vim.fn.expand("%:p"))
+end, { desc = "[C]opy full [P]ath" })
+
+vim.keymap.set("n", "<leader>cd", function()
+	vim.fn.setreg("+", vim.fn.expand("%:p:h"))
+	print("Copied directory: " .. vim.fn.expand("%:p:h"))
+end, { desc = "[C]opy [D]irectory" })

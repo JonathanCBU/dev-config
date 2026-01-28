@@ -15,13 +15,12 @@ return {
 	},
 	opts = {
 		notify_on_error = false,
-		format_on_save = function(bufnr)
+		format_on_save = function()
 			return false
 		end,
 		formatters_by_ft = {
 			lua = { "stylua" },
 			go = { "goimports", "gofumpt" },
-			cs = { "csharpier" },
 
 			markdown = { "prettierd", "prettier" },
 

@@ -19,6 +19,10 @@ return {
 					hide_dotfiles = false,
 					hide_gitignored = true,
 				},
+				follow_current_file = {
+					enabled = true,
+					leave_dirs_open = true,
+				},
 			},
 			git_status = {
 				symbols = {

@@ -104,19 +104,6 @@ return {
 						},
 					},
 				},
-				omnisharp = {
-					cmd = { "omnisharp" },
-					settings = {
-						FormattingOptions = {
-							EnableEditorConfigSupport = true,
-							OrganizeImports = true,
-						},
-						RoslynExtensionsOptions = {
-							EnableAnalyzersSupport = true,
-							EnableImportCompletion = true,
-						},
-					},
-				},
 				-- TypeScript / JavaScript
 				vtsls = {
 					-- (optional) filetypes are usually automatic; add if you want to be explicit:
