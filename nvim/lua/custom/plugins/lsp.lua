@@ -136,6 +136,10 @@ return {
 						},
 					},
 				},
+
+				-- Python
+				ruff = {},
+				pyright = {},
 			}
 
 			require("mason").setup()
@@ -155,6 +159,10 @@ return {
 
 				-- C#
 				"omnisharp",
+
+				-- Python
+				"ruff",
+				"pyright",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 

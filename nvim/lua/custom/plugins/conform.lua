@@ -34,6 +34,8 @@ return {
 			bash = { "shfmt" },
 
 			sql = { "sqlfluff", "sqlfmt" },
+
+			python = { "ruff_format", "ruff" },
 		},
 	},
 }
