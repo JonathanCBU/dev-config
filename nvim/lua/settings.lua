@@ -22,6 +22,58 @@ vim.opt.breakindent = true
 -- Save undo history
 vim.opt.undofile = true
 
+-- Disable undofile for paths that would create filenames > 255 chars
+vim.api.nvim_create_autocmd("BufReadPre", {
+	callback = function()
+		local undodir = vim.fn.stdpath("state") .. "/undo/"
+		local filepath = vim.fn.expand("%:p")
+		local undofile = undodir .. filepath:gsub("/", "%%")
+
+		-- macOS has a 255-byte filename limit
+		if #undofile > 255 then
+			vim.opt_local.undofile = false
+		end
+	end,
+})
+
+-- Clean up old/large undo files on startup
+vim.api.nvim_create_autocmd("VimEnter", {
+	callback = function()
+		local undodir = vim.fn.stdpath("state") .. "/undo/"
+		local max_age_days = 14 -- Remove undo files older than this
+		local max_size_mb = 1 -- Remove undo files larger than this
+		local now = os.time()
+
+		vim.uv.fs_scandir(undodir, function(err, handle)
+			if err or not handle then
+				return
+			end
+
+			while true do
+				local name, type = vim.uv.fs_scandir_next(handle)
+				if not name then
+					break
+				end
+
+				if type == "file" then
+					local filepath = undodir .. name
+					local stat = vim.uv.fs_stat(filepath)
+
+					if stat then
+						local age_days = (now - stat.mtime.sec) / 86400
+						local size_mb = stat.size / 1048576
+
+						-- Remove if too old or too large
+						if age_days > max_age_days or size_mb > max_size_mb then
+							vim.uv.fs_unlink(filepath)
+						end
+					end
+				end
+			end
+		end)
+	end,
+})
+
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.ignorecase = true
 vim.opt.smartcase = true

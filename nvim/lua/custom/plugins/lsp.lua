@@ -123,19 +123,6 @@ return {
 						},
 					},
 				},
-				-- C#
-				omnisharp = {
-					settings = {
-						FormattingOptions = {
-							EnableEditorConfigSupport = true,
-							OrganizeImports = true,
-						},
-						RoslynExtensionsOptions = {
-							EnableAnalyzersSupport = true,
-							EnableImportCompletion = true,
-						},
-					},
-				},
 
 				-- Python
 				ruff = {},
@@ -156,9 +143,6 @@ return {
 				-- TS/JS
 				"vtsls",
 				"prettierd", -- or "prettier"
-
-				-- C#
-				"omnisharp",
 
 				-- Python
 				"ruff",

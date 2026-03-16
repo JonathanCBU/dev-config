@@ -84,3 +84,6 @@ vim.keymap.set("n", "<leader>cd", function()
 	vim.fn.setreg("+", vim.fn.expand("%:p:h"))
 	print("Copied directory: " .. vim.fn.expand("%:p:h"))
 end, { desc = "[C]opy [D]irectory" })
+
+vim.keymap.set("n", "<leader>wj", ":resize -10<CR>", { desc = "Resize window -10" })
+vim.keymap.set("n", "<leader>wk", ":resize +10<CR>", { desc = "Resize window +10" })
