@@ -5,19 +5,19 @@
 ### Last commit info
 
 ```bash
-git config --global alias.l1 'log -1 HEAD'
+git config --global alias.l1 '!git --no-pager log -1 HEAD'
 ```
 
 ### Last 2 commits
 
 ```bash
-git config --global alias.l2 'log -2 HEAD'
+git config --global alias.l2 '!git --no-pager log -2 HEAD'
 ```
 
 ### Last 3 commits
 
 ```bash
-git config --global alias.l3 'log -3 HEAD'
+git config --global alias.l3 '!git --no-pager log -3 HEAD'
 ```
 
 ### Status (compact)
