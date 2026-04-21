@@ -36,6 +36,8 @@ return {
 			sql = { "sqlfluff", "sqlfmt" },
 
 			python = { "ruff_format", "ruff" },
+
+			toml = { "taplo" },
 		},
 	},
 }
