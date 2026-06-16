@@ -22,6 +22,10 @@ if [ -f ~/.dev-config/local/funcs.sh ]; then
   . ~/.dev-config/local/funcs.sh
 fi
 
+if [ -f ~/.dev-config/local/loader.sh.sh ]; then
+  . ~/.dev-config/local/loader.sh.sh
+fi
+
 # Work aliases and funcs that aren't meant to go into my public repo
 if [ -f ~/.dev-config/local/work_zshrc.sh ]; then
   . ~/.dev-config/local/work_zshrc.sh
@@ -30,3 +34,10 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+
+# bun completions
+[ -s "/Users/jonathancook/.bun/_bun" ] && source "/Users/jonathancook/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
