@@ -46,4 +46,7 @@ ln -sf ~/.dev-config/nvim/lua ~/.config/nvim/lua
 ln -s ~/.vimrc ~/.ideavimrc
 ```
 
-
+## Tmux
+```bash
+ln -sf ~/.dev-config/tmux/tmux.conf ~/.tmux.conf
+```
