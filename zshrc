@@ -23,7 +23,7 @@ if [ -f ~/.dev-config/local/funcs.sh ]; then
 fi
 
 if [ -f ~/.dev-config/local/loader.sh.sh ]; then
-  . ~/.dev-config/local/loader.sh.sh
+  . ~/.dev-config/local/loader.sh
 fi
 
 # Work aliases and funcs that aren't meant to go into my public repo
