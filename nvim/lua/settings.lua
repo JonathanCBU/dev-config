@@ -109,3 +109,13 @@ vim.opt.scrolloff = 10
 
 -- Line at 80 chars
 vim.opt.colorcolumn = "79"
+
+-- terminal customization
+vim.api.nvim_create_autocmd("TermOpen", {
+	pattern = "*",
+	command = "setlocal relativenumber number",
+})
+
+-- lsp logging setting
+-- set to debug if needed for debugging your lsp plugin/servers
+vim.lsp.set_log_level("off")

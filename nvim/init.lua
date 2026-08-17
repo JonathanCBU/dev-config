@@ -2,10 +2,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-require("settings")
-
-require("mappings")
-
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -40,12 +36,6 @@ require("lazy").setup({
 	{ import = "custom.plugins" },
 })
 
--- terminal customization
-vim.api.nvim_create_autocmd("TermOpen", {
-	pattern = "*",
-	command = "setlocal relativenumber number",
-})
+require("settings")
 
--- lsp logging setting
--- set to debug if needed for debugging your lsp plugin/servers
-vim.lsp.set_log_level("off")
+require("mappings")
