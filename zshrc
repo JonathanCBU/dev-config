@@ -38,6 +38,8 @@ export NVM_DIR="$HOME/.nvm"
 # bun completions
 [ -s "/Users/jonathancook/.bun/_bun" ] && source "/Users/jonathancook/.bun/_bun"
 
+# asdf completions
+fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
+autoload -Uz compinit && compinit
+
 # bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
