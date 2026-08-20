@@ -27,8 +27,8 @@ if [ -f ~/.dev-config/local/loader.sh.sh ]; then
 fi
 
 # Work aliases and funcs that aren't meant to go into my public repo
-if [ -f ~/.dev-config/local/work_zshrc.sh ]; then
-  . ~/.dev-config/local/work_zshrc.sh
+if [ -f ~/.dev-config/local/work/work_zshrc.sh ]; then
+  . ~/.dev-config/local/work/work_zshrc.sh
 fi
 
 export NVM_DIR="$HOME/.nvm"
