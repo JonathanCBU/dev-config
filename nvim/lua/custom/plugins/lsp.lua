@@ -150,15 +150,17 @@ return {
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
-			require("mason-lspconfig").setup({
-				handlers = {
-					function(server_name)
-						local server = servers[server_name] or {}
-						server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-						require("lspconfig")[server_name].setup(server)
-					end,
-				},
-			})
+			-- Give every server the completion capabilities from nvim-cmp, then
+			-- layer our per-server overrides on top of the defaults that
+			-- nvim-lspconfig ships in its `lsp/` directory. Configure before
+			-- mason-lspconfig runs, since its `automatic_enable` default is what
+			-- actually calls `vim.lsp.enable()` for each installed server.
+			vim.lsp.config("*", { capabilities = capabilities })
+			for server, config in pairs(servers) do
+				vim.lsp.config(server, config)
+			end
+
+			require("mason-lspconfig").setup({})
 		end,
 	},
 }

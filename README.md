@@ -41,6 +41,9 @@ ln -sf ~/.dev-config/nvim/init.lua ~/.config/nvim/init.lua
 ln -sf ~/.dev-config/nvim/lua ~/.config/nvim/lua
 ```
 
+See [nvim/README.md](nvim/README.md) for the config layout and how to add an LSP
+or a formatter.
+
 ## IdeaVIM (JetBrains)
 ```bash
 ln -s ~/.vimrc ~/.ideavimrc

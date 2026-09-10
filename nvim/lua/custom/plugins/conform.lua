@@ -22,20 +22,22 @@ return {
 			lua = { "stylua" },
 			go = { "goimports", "gofumpt" },
 
-			markdown = { "prettierd", "prettier" },
+			markdown = { "prettierd", "prettier", stop_after_first = true },
 
-			javascript = { "prettierd", "prettier" },
-			javascriptreact = { "prettierd", "prettier" },
-			typescript = { "prettierd", "prettier" },
-			typescriptreact = { "prettierd", "prettier" },
+			javascript = { "prettierd", "prettier", stop_after_first = true },
+			javascriptreact = { "prettierd", "prettier", stop_after_first = true },
+			typescript = { "prettierd", "prettier", stop_after_first = true },
+			typescriptreact = { "prettierd", "prettier", stop_after_first = true },
 
 			sh = { "shfmt" },
 			zsh = { "shfmt" },
 			bash = { "shfmt" },
 
-			sql = { "sqlfluff", "sqlfmt" },
+			sql = { "sqlfluff", "sqlfmt", stop_after_first = true },
 
-			python = { "ruff_format", "ruff" },
+			-- ruff_format formats, ruff_fix applies lint autofixes -- complementary,
+			-- so both run in sequence (no stop_after_first here).
+			python = { "ruff_format", "ruff_fix" },
 
 			toml = { "taplo" },
 		},
