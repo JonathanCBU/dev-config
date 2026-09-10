@@ -1,5 +1,19 @@
 # Git Aliases
 
+## TL;DR
+
+__Add this to your `~/.gitconfig`__
+```toml
+[alias]
+	s = status -sb
+	ss = status
+	c = commit -m
+	ca = commit -am
+	l1 = !git --no-pager log -1 HEAD
+	l2 = !git --no-pager log -2 HEAD
+	l3 = !git --no-pager log -3 HEAD
+```
+
 ## Information Display
 
 ### Last commit info
