@@ -11,3 +11,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # asdf
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
+# aws cli settings
+export AWS_PAGER="" # no cli pager
