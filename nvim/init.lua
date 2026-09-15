@@ -31,6 +31,7 @@ vim.opt.rtp:prepend(lazypath)
 --    :Lazy
 
 -- NOTE: To add a new plugin, create a new file in lua/custom/plugins/ that returns a plugin spec
+require("utils")
 require("lazy").setup({
 	-- Import all plugin configurations from lua/custom/plugins/
 	{ import = "custom.plugins" },

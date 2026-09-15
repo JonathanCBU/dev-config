@@ -35,9 +35,28 @@ vim.keymap.set("n", "<leader>bd", ":bdelete<CR>", { desc = "Delete buffer" })
 vim.keymap.set("n", "<leader>ev", ":e $MYVIMRC<CR>", { desc = "Edit vim config" })
 
 -- Tree view
-vim.keymap.set("n", "<leader>pv", ":Neotree toggle<CR>", { desc = "Toggle File [E]xplorer" })
 vim.keymap.set("n", "<leader>pf", ":Neotree focus<CR>", { desc = "Toggle File [E]xplorer" })
 vim.keymap.set("n", "<leader>pg", ":Neotree git_status toggle<CR>", { desc = "Toggle File [E]xplorer" })
+
+-- `Neotree toggle` returns early when it closes the tree, so a position
+-- override never lands on an already-open tree. Close and reopen instead.
+vim.keymap.set("n", "<leader>pv", function()
+	local want = IS_WIN_LANDSCAPE() and "left" or "bottom"
+	local open_at
+	for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
+		local buf = vim.api.nvim_win_get_buf(win)
+		if vim.bo[buf].filetype == "neo-tree" then
+			open_at = vim.b[buf].neo_tree_position
+			break
+		end
+	end
+	if open_at then
+		vim.cmd("Neotree close")
+	end
+	if open_at ~= want then
+		vim.cmd("Neotree show position=" .. want)
+	end
+end, { desc = "Toggle File [E]xplorer (auto position)" })
 
 -- Bulk edit macros
 vim.keymap.set("n", "<leader>dd", [[:s/\s\+//g<CR>]], { desc = "Remove all whitespace from current line" })
