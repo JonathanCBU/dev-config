@@ -57,26 +57,12 @@ return {
 				prompt_title = "Live Grep in Open Files",
 			})
 		end, { desc = "[S]earch [/] in Open Files" })
-		vim.keymap.set("n", "<leader>sfa", function()
+		vim.keymap.set("n", "<leader>sa", function()
 			builtin.find_files({
 				no_ignore = true,
 				hidden = true,
 				prompt_title = "File search (all)",
 			})
-		end, { desc = "[S]earch [F]iles ([A]ll)" })
-		vim.keymap.set("n", "<leader>sga", function()
-			builtin.live_grep({
-				additional_args = function(opts)
-					return { "--no_ignore", "--hidden" }
-				end,
-				prompt_title = "Live grep (all)",
-			})
-		end, { desc = "[S]earch by [G]rep ([A]ll)" })
-		vim.keymap.set("n", "<leader>swa", function()
-			builtin.grep_string({
-				no_ignore = true,
-				hidden = true,
-			})
-		end, { desc = "[S]earch current [W]ord ([A]ll)" })
+		end, { desc = "[S]earch files ([A]ll)" })
 	end,
 }
