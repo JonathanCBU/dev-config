@@ -14,3 +14,6 @@ export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 # aws cli settings
 export AWS_PAGER="" # no cli pager
+
+# go
+export CGO_ENABLED=1

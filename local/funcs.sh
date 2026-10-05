@@ -74,3 +74,10 @@ bulk_pull_main() {
         fi
     done
 }
+
+gclone() {
+    local host="$1"
+    local url="$2"
+    local repo=${url#*\:}
+    git clone ${host}:${repo}
+}
