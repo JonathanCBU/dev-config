@@ -18,6 +18,8 @@ return {
 			"vimdoc",
 			"go",
 			"c_sharp",
+			"terraform",
+			"hcl",
 		},
 		auto_install = true,
 		highlight = {

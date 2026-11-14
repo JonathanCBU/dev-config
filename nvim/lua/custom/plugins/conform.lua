@@ -40,6 +40,9 @@ return {
 			python = { "ruff_format", "ruff_fix" },
 
 			toml = { "taplo" },
+
+			terraform = { "terraform_fmt" },
+			["terraform-vars"] = { "terraform_fmt" },
 		},
 	},
 }
