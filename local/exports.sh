@@ -17,3 +17,6 @@ export AWS_PAGER="" # no cli pager
 
 # go
 export CGO_ENABLED=1
+
+# docker osx creds store
+export PATH="$HOME/Personal/docker-credential-helpers/bin/build/:$PATH"

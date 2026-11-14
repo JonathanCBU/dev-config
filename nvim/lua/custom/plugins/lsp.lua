@@ -127,6 +127,9 @@ return {
 				-- Python
 				ruff = {},
 				pyright = {},
+
+				-- Terraform
+				terraformls = {},
 			}
 
 			require("mason").setup()
@@ -147,6 +150,9 @@ return {
 				-- Python
 				"ruff",
 				"pyright",
+
+				-- Terraform
+				"terraform-ls",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
