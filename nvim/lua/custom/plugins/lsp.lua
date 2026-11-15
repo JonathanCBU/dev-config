@@ -130,6 +130,9 @@ return {
 
 				-- Terraform
 				terraformls = {},
+
+				-- C/C++
+				clangd = {},
 			}
 
 			require("mason").setup()
@@ -153,6 +156,9 @@ return {
 
 				-- Terraform
 				"terraform-ls",
+
+				-- C/C++
+				"clangd",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
